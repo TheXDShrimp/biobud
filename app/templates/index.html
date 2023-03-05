@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block ourpage %}
+  <div id="particles-js" style="background: black; position: absolute; width: 100%; height: 100%; margin-top: -3.5rem;">
+    <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas>
+  </div>
+  <div class="content text-white text-center max-w-screen-md mx-auto mt-40" style="position: relative">
+
+    <h1 style="z-index: 10" class="text-7xl font-bold mb-8"><span class="text-green-300">Bio</span>Bud</h1>
+    
+    <h3 style="z-index: 10" class="text-2xl font-semibold mb-8">The world's first intelligent physician assistant.</h3>
+    <div class="flex font-semibold text-lg space-x-8 justify-center">
+<!--      <a href="/face" class="px-8 py-4 rounded-md bg-blue-200 text-black opacity-80 hover:opacity-100"><p>Facial Paralysis</p></a>-->
+      <a href="/record" class="px-8 py-4 rounded-md bg-green-300 text-black opacity-80 hover:bg-green-200"><p>Start Session</p></a>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    var request = new XMLHttpRequest();
+    request.open("GET","static/js/particles.json", false);
+    request.send(null);
+    var jsonData = JSON.parse(request.responseText);
+    particlesJS('particles-js', jsonData, function(){
+        console.log("particles.json loaded...");
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <link rel="stylesheet" href="https://kit.fontawesome.com/b9a52d9f65.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b9a52d9f65.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="static/css/output.css" />
+
+  </head>
+  <body style="font-family: Inter">
+    <nav
+      class="h-14 px-8 py-4 text-md shadow-md font-semibold bg-gray-800 text-white"
+    >
+      <div class="flex space-x-5">
+        <a href="/" class="hover:text-blue-200"><p>Home</p></a>
+        <a href="{{ url_for('record') }}" class="hover:text-blue-200"
+          ><p>Record</p></a>
+      </div>
+    </nav>
+    {% block ourpage %} {% endblock %}
+    <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
+    <script src = "/randomize.js"></script>
+  </body>
+</html>

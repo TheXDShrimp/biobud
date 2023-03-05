@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% block ourpage %}
+
+<body>
+  
+  <h1 class="text-4xl text-center font-bold mt-12">BioBud</h1>
+  <p class="text-xl italic text-#015871-500 max-w-screen-lg text-center mx-auto mt-4 mb-12">Start a recording when your patient's visit starts, and when you have a question, say "Hey BioBud!"</p>
+  
+  <!-- <div class=" max-w-screen-md mx-auto">
+    <button id='start' class="font-bold text-center w-full text-xl shadow-md cursor-pointer px-4 py-4 rounded-md bg-red-600 text-white hover:bg-red-500">Start Recording</button>
+    <button id='stop' class="font-bold text-center text-xl w-full shadow-md mb-6 cursor-pointer mt-6 px-4 py-4 rounded-md bg-red-600 text-white hover:bg-red-500">Stop Recording</button>
+  </div> -->
+
+  <form action="/record" method="POST">
+    <div class=" max-w-screen-md mx-auto">
+      <button id="control" type="submit" class="{{ btn_class }}">{{ btn_text }}</button>
+    </div>
+  </form>
+
+  <!-- <div class=" max-w-screen-md mx-auto">
+    <button id="control" class="{{ btn_class }}"">{{ btn_text }}</button>
+    <br><br>
+  </div> -->
+
+  <div class="ocean">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+
+  <!-- <script>
+    let btn = document.querySelector('#control')
+    btn.addEventListener('click', handle)
+    function handle() {
+      if (btn.classList.contains('start')) {
+        // btn.classList.remove('start')
+        // btn.classList.add('stop')
+        // btn.innerHTML = 'Stop Recording'
+        
+        $.post( "/record");
+      } else {
+        // btn.classList.remove('stop')
+        // btn.classList.add('start')
+        // btn.innerHTML = 'Start Recording'
+        
+        $.get( "/record");
+      }
+    }
+  </script> -->
+
+</body>
+
+{% endblock %}
